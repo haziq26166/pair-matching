@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Match the Test – Service Validation and Testing</title>
+  <meta name="description" content="A pair matching game about ITIL Service Validation and Testing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1 id="title">Match the Test</h1>
+      <p class="intro">Pick one item from the left and one from the right that belong together.</p>
+    </header>
+
+    <section class="bar" aria-label="Game status">
+      <p class="stat">Level <strong id="level">1</strong> of <span id="level-total">2</span></p>
+      <p class="stat">Moves <strong id="moves">0</strong></p>
+      <p class="stat">Pairs found <strong id="found">0</strong> of <span id="total">6</span></p>
+      <button type="button" id="restart" class="btn">Shuffle and restart</button>
+    </section>
+
+    <section class="board" aria-label="Matching board">
+      <div class="col">
+        <h2 class="col-title title-left" id="left-title">Terms and steps</h2>
+        <ul class="list" id="left" aria-labelledby="left-title"></ul>
+      </div>
+      <div class="col">
+        <h2 class="col-title title-right" id="right-title">Meanings</h2>
+        <ul class="list" id="right" aria-labelledby="right-title"></ul>
+      </div>
+    </section>
+
+    <p id="status" class="sr-only" role="status" aria-live="polite"></p>
+
+    <footer class="foot">
+      <p>Content from ICT654 Chapter 4, Service Validation and Testing.</p>
+    </footer>
+  </main>
+
+  <dialog id="win" class="win" aria-labelledby="win-title">
+    <h2 id="win-title">All pairs matched!</h2>
+    <p id="win-text"></p>
+    <button type="button" id="again" class="btn">Play again</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
